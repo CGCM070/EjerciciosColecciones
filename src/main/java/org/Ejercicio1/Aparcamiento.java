@@ -1,4 +1,4 @@
-package Ejercicio1;
+package org.Ejercicio1;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -10,9 +10,13 @@ public class Aparcamiento {
 
 
     public void introducirVehiculo(Vehiculos v1) throws Exception {
-        Exception mensaje = new Exception("Vehiculo ya en el aparcamiento");
+        Exception seEncuentra = new Exception("Vehiculo ya en el aparcamiento");
+        Exception lleno = new Exception("Esta lleno el aparcamiento");
         if(estaVehiculo(v1.getMatricula())){
-            throw mensaje;
+            throw seEncuentra;
+        }
+        else if(listaVehiculos.size()==capacidad){
+            throw lleno;
         }
         else{
             listaVehiculos.add(v1);
@@ -49,5 +53,10 @@ public class Aparcamiento {
             }
         }
         return resultado;
+    }
+
+    public Aparcamiento(ArrayList<Vehiculos> listaVehiculos, int capacidad) {
+        this.listaVehiculos = listaVehiculos;
+        this.capacidad = capacidad;
     }
 }

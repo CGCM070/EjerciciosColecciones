@@ -1,4 +1,4 @@
-package Ejercicio1;
+package org.Ejercicio1;
 
 public class Camion extends Vehiculos{
 
@@ -18,4 +18,7 @@ public class Camion extends Vehiculos{
         return importe;
     }
 
+    public Camion(int ejes) {
+        this.ejes = ejes;
+    }
 }

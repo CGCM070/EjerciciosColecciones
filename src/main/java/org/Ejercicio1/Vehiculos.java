@@ -1,4 +1,4 @@
-package Ejercicio1;
+package org.Ejercicio1;
 
 import java.util.Comparator;
 
@@ -36,4 +36,13 @@ public abstract class Vehiculos implements Comparator<Vehiculos> {
         return o1.getMatricula().compareTo(o2.getMatricula());
     }
     abstract double calcularImporte();
+
+    @Override
+    public String toString() {
+        return "Vehiculos{" +
+                "matricula='" + matricula + '\'' +
+                ", minutos=" + minutos +
+                ", bono=" + bono +
+                '}';
+    }
 }

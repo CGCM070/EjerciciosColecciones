@@ -1,4 +1,4 @@
-package Ejercicio1;
+package org.Ejercicio1;
 
 public class Automovil extends Vehiculos {
 
@@ -32,5 +32,16 @@ public class Automovil extends Vehiculos {
         if(isBono());//Si tiene bono entonces reducimos el importe final
         importe *= 0.6;
         return importe;
+    }
+
+    public Automovil(Tipo tipo) {
+        this.tipo = tipo;
+    }
+
+    @Override
+    public String toString() {
+        return "Automovil{" +
+                "tipo=" + tipo +
+                "} " + super.toString();
     }
 }
