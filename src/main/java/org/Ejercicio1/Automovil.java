@@ -19,7 +19,7 @@ public class Automovil extends Vehiculos{
     }
 
     @Override
-    double calcularImporte() {
+    public double calcularImporte() {
         double importe;
         if (getTipo().equals(Tipo.TURISMO)) {
             importe = getMinutos() * 1.5 / 60;

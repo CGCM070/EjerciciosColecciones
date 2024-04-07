@@ -31,7 +31,7 @@ public abstract class Vehiculos implements Comparable<Vehiculos> {
         this.bono = bono;
     }
 
-    abstract double calcularImporte();
+    public abstract double calcularImporte();
 
     @Override
     public int compareTo(Vehiculos o) {

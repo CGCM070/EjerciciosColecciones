@@ -4,7 +4,7 @@ public class Camion extends Vehiculos{
 
     private int ejes;
     @Override
-    double calcularImporte() {
+    public double calcularImporte() {
         double importe;
         if (ejes<=3){
             importe=getMinutos()*4.5/60;
