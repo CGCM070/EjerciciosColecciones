@@ -1,6 +1,7 @@
 package org.Ejercicio1;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
 
 public class Aparcamiento {
@@ -32,7 +33,7 @@ public class Aparcamiento {
                     Vehiculos v0 = it.next();
                     if(v0.getMatricula().equals(matricula)){
                         System.out.println("El importe a pagar es: "+v0.calcularImporte());
-                        listaVehiculos.remove(v0);
+                        it.remove();
                     }
                 }
         }
@@ -58,5 +59,21 @@ public class Aparcamiento {
     public Aparcamiento(ArrayList<Vehiculos> listaVehiculos, int capacidad) {
         this.listaVehiculos = listaVehiculos;
         this.capacidad = capacidad;
+    }
+
+    public ArrayList<Vehiculos> getListaVehiculos() {
+        return listaVehiculos;
+    }
+
+    public void setListaVehiculos(ArrayList<Vehiculos> listaVehiculos) {
+        this.listaVehiculos = listaVehiculos;
+    }
+
+    @Override
+    public String toString() {
+        return "Aparcamiento{" +
+                "listaVehiculos=" + listaVehiculos +
+                ", capacidad=" + capacidad +
+                '}';
     }
 }

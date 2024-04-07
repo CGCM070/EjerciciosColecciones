@@ -1,6 +1,6 @@
 package org.Ejercicio1;
 
-public class Automovil extends Vehiculos {
+public class Automovil extends Vehiculos{
 
     //Usamos una enum para obligar que los objetos de esta clase sean o bien Turismo,Todoterreno o Furgoneta.
 

@@ -2,7 +2,7 @@ package org.Ejercicio1;
 
 import java.util.Comparator;
 
-public abstract class Vehiculos implements Comparator<Vehiculos> {
+public abstract class Vehiculos implements Comparable<Vehiculos> {
     private String matricula;
     private int minutos;
     private boolean bono;
@@ -31,11 +31,12 @@ public abstract class Vehiculos implements Comparator<Vehiculos> {
         this.bono = bono;
     }
 
-    @Override
-    public int compare(Vehiculos o1, Vehiculos o2) {
-        return o1.getMatricula().compareTo(o2.getMatricula());
-    }
     abstract double calcularImporte();
+
+    @Override
+    public int compareTo(Vehiculos o) {
+        return matricula.compareTo(o.matricula);
+    }
 
     @Override
     public String toString() {

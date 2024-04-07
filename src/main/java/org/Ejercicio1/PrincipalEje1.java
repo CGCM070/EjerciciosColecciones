@@ -2,6 +2,7 @@ package org.Ejercicio1;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 
 public class PrincipalEje1 {
 
@@ -14,7 +15,7 @@ public class PrincipalEje1 {
         Automovil a1 = new Automovil(Automovil.Tipo.TURISMO);
         a1.setMinutos(100);
         a1.setBono(true);
-        a1.setMatricula("A123");
+        a1.setMatricula("Z123");
 
 
         Automovil a2 = new Automovil(Automovil.Tipo.FURGONETA);
@@ -47,7 +48,7 @@ public class PrincipalEje1 {
         System.out.println(c2);
 
         //Creamos un Aparcamiento, para eso metemos todos los vehiculos en una lista
-        ArrayList<Vehiculos> aV = new ArrayList<Vehiculos>();
+        ArrayList<Vehiculos> aV = new ArrayList<>();
         aV.add(a1);
         aV.add(a2);
         aV.add(a3);
@@ -80,12 +81,14 @@ public class PrincipalEje1 {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
-        System.out.println(aV.size());
         //Ahora introducimo uno con matricula repetida
         try{
             ap.introducirVehiculo(c4);
         } catch (Exception e){
             System.out.println(e.getMessage());
         }
+        Collections.sort(aV);//Ordenamos la lista antes de imprimirla.
+        System.out.println(ap);
     }
+
 }
