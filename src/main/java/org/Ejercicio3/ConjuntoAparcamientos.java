@@ -9,6 +9,9 @@ import java.util.*;
 public class ConjuntoAparcamientos {
     private Map<Integer, Aparcamiento> listaAparcamientos;
 
+    public ConjuntoAparcamientos() {
+    }
+
     public void vaciarAparcamiento(Integer id) {
         Set<Integer> conjuntoClaves = listaAparcamientos.keySet();
         Iterator<Integer> it = conjuntoClaves.iterator();
@@ -48,10 +51,22 @@ public class ConjuntoAparcamientos {
                 if(v0 instanceof Camion){
                     conjuntoCamiones.add((Camion) v0);
                     ap.getListaVehiculos().iterator().remove();
+                    /*
+                     * deberia de eliminar el iterador que contiene los vehiculos
+                     * el segundo iterador , en este caso : it1.remove() y no ;
+                     * ap.getListaVehiculos().iterator().remove();
+                     *
+                     * */
                 }
             }
         }
         return conjuntoCamiones;
+    }
+
+    public Map<Integer, Aparcamiento> getListaAparcamientos() {
+        return listaAparcamientos;
+    }
+    public void setListaAparcamientos(Map<Integer, Aparcamiento> listaAparcamientos) {this.listaAparcamientos = listaAparcamientos;
     }
 }
 
