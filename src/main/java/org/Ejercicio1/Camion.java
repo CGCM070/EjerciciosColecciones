@@ -1,10 +1,10 @@
 package org.Ejercicio1;
 
-public class Camion extends Vehiculos{
+public class Camion extends Vehiculos {
 
     private int ejes;
     @Override
-    double calcularImporte() {
+    public double calcularImporte() {
         double importe;
         if (ejes<=3){
             importe=getMinutos()*4.5/60;
@@ -16,6 +16,14 @@ public class Camion extends Vehiculos{
             importe*=0.6;
         }
         return importe;
+    }
+
+    public void setEjes(int ejes) {
+        this.ejes = ejes;
+    }
+
+    public int getEjes() {
+        return ejes;
     }
 
     public Camion(int ejes) {

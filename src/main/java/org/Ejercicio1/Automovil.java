@@ -19,7 +19,7 @@ public class Automovil extends Vehiculos{
     }
 
     @Override
-    double calcularImporte() {
+    public double calcularImporte() {
         double importe;
         if (getTipo().equals(Tipo.TURISMO)) {
             importe = getMinutos() * 1.5 / 60;
@@ -29,8 +29,9 @@ public class Automovil extends Vehiculos{
             importe = getMinutos() * 3.5 / 60;
         }
 
-        if(isBono());//Si tiene bono entonces reducimos el importe final
-        importe *= 0.6;
+        if(isBono()) {//Si tiene bono entonces reducimos el importe final
+            importe *= 0.6;
+        }
         return importe;
     }
 
