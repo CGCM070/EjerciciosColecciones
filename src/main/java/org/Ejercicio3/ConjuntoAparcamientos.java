@@ -50,13 +50,7 @@ public class ConjuntoAparcamientos {
                 Vehiculos v0 = it1.next();
                 if(v0 instanceof Camion){
                     conjuntoCamiones.add((Camion) v0);
-                    ap.getListaVehiculos().iterator().remove();
-                    /*
-                     * deberia de eliminar el iterador que contiene los vehiculos
-                     * el segundo iterador , en este caso : it1.remove() y no ;
-                     * ap.getListaVehiculos().iterator().remove();
-                     * caso contratio eliminariamos el primer vehiculo que encuentra
-                     * */
+                    it1.remove();
                 }
             }
         }
