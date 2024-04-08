@@ -22,7 +22,7 @@ public class ConjuntoAparcamientos {
         Aparcamiento ap_actual = listaAparcamientos.get(id);
         Aparcamiento ap_siguiente = listaAparcamientos.get(idSiguiente);
 
-        if (ap_siguiente.getCapacidad() <= ap_actual.getCapacidad() + ap_siguiente.getCapacidad()) {
+        if (ap_siguiente.getCapacidad() >= ap_actual.getCapacidad() + ap_siguiente.getCapacidad()) {
             ap_siguiente.getListaVehiculos().addAll(ap_actual.getListaVehiculos());
         }
         ap_actual.getListaVehiculos().clear();
