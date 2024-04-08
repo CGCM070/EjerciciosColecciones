@@ -29,8 +29,9 @@ public class Automovil extends Vehiculos{
             importe = getMinutos() * 3.5 / 60;
         }
 
-        if(isBono());//Si tiene bono entonces reducimos el importe final
-        importe *= 0.6;
+        if(isBono()) {//Si tiene bono entonces reducimos el importe final
+            importe *= 0.6;
+        }
         return importe;
     }
 
