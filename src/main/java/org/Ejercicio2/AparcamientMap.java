@@ -40,7 +40,7 @@ public class AparcamientMap {
     }
 
 
-
+    //Utilizamos este metodo para buscar si el conjunto tiene ya el Vehiculo
     private boolean estaVehiculo(String matricula) { //Funcion para comprobar si esta el vehiculo
         return listaVehiculos.containsKey(matricula);
     }

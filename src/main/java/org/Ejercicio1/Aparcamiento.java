@@ -6,6 +6,7 @@ import java.util.Iterator;
 
 public class Aparcamiento {
 
+    //Podriamos implementar un TreeSet para ordenar los elementos automaticamente.
     private ArrayList<Vehiculos> listaVehiculos;
     private int capacidad;
 
@@ -67,6 +68,14 @@ public class Aparcamiento {
 
     public void setListaVehiculos(ArrayList<Vehiculos> listaVehiculos) {
         this.listaVehiculos = listaVehiculos;
+    }
+
+    public int getCapacidad() {
+        return capacidad;
+    }
+
+    public void setCapacidad(int capacidad) {
+        this.capacidad = capacidad;
     }
 
     @Override
