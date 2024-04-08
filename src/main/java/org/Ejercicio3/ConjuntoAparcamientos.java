@@ -55,7 +55,7 @@ public class ConjuntoAparcamientos {
                      * deberia de eliminar el iterador que contiene los vehiculos
                      * el segundo iterador , en este caso : it1.remove() y no ;
                      * ap.getListaVehiculos().iterator().remove();
-                     *
+                     * caso contratio eliminariamos el primer vehiculo que encuentra
                      * */
                 }
             }
