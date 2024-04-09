@@ -24,6 +24,7 @@ public class AparcamientMap {
         }
         else{
             listaVehiculos.put(v1.getMatricula(),v1);
+            capacidad--;
         }
     }
 
@@ -33,7 +34,8 @@ public class AparcamientMap {
         if(estaVehiculo(matricula)){
             System.out.println("El importe a pagar es: "+listaVehiculos.get(matricula).calcularImporte());
             listaVehiculos.remove(matricula);
-                }
+            capacidad++;
+        }
         else{
             throw mensaje;
         }
