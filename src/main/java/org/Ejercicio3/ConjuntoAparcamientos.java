@@ -9,9 +9,6 @@ import java.util.*;
 public class ConjuntoAparcamientos {
     private Map<Integer, Aparcamiento> listaAparcamientos;
 
-    public ConjuntoAparcamientos() {
-    }
-
     public void vaciarAparcamiento(Integer id) {
         Set<Integer> conjuntoClaves = listaAparcamientos.keySet();
         Iterator<Integer> it = conjuntoClaves.iterator();
@@ -30,6 +27,21 @@ public class ConjuntoAparcamientos {
         }
         ap_actual.getListaVehiculos().clear();
 
+    }
+
+    public Map<Integer, Aparcamiento> getListaAparcamientos() {
+        return listaAparcamientos;
+    }
+
+    @Override
+    public String toString() {
+        return "ConjuntoAparcamientos{" +
+                "listaAparcamientos=" + listaAparcamientos +
+                '}';
+    }
+
+    public void setListaAparcamientos(Map<Integer, Aparcamiento> listaAparcamientos) {
+        this.listaAparcamientos = listaAparcamientos;
     }
 
     public void añadirAparcamiento(Integer id, Aparcamiento ap) {
@@ -55,12 +67,6 @@ public class ConjuntoAparcamientos {
             }
         }
         return conjuntoCamiones;
-    }
-
-    public Map<Integer, Aparcamiento> getListaAparcamientos() {
-        return listaAparcamientos;
-    }
-    public void setListaAparcamientos(Map<Integer, Aparcamiento> listaAparcamientos) {this.listaAparcamientos = listaAparcamientos;
     }
 }
 
