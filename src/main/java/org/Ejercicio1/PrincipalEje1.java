@@ -1,8 +1,8 @@
 package org.Ejercicio1;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
+import org.Ejercicio3.ConjuntoAparcamientos;
+
+import java.util.*;
 
 public class PrincipalEje1 {
 
@@ -94,5 +94,58 @@ public class PrincipalEje1 {
         }
         Collections.sort(aV);//Ordenamos la lista antes de imprimirla.
         System.out.println(ap);
+
+
+        //Vamos a generar cinco aparcamientos con sus respectivos 3 vehiculos cada uno y los meteremos en un mapa para
+        //usar nuestra clase ConjuntoAparcamientos
+
+        Map<Integer,Aparcamiento> mapa = new HashMap<>();//Nuestro mapa
+        for(int i=0;i<5;i++){//Iteramos 6 veces
+            ArrayList<Vehiculos> nuevaLista = new ArrayList<>();
+            int cantidad = (int)(Math.random()*5)+3;
+            Aparcamiento apar = new Aparcamiento(nuevaLista,cantidad);
+            mapa.put(i,apar);
+            for(int j=0;j<3;j++){
+                int tipoVehiculo = (int) (Math.random()*2);//Generamos random para diferenciar entre camion/vehiculo
+                if(tipoVehiculo==1){
+                    Automovil auto = new Automovil(Automovil.Tipo.TURISMO);
+                    int minAleatorio = (int)(Math.random()*200);
+                    auto.setMinutos(minAleatorio);
+                    if((i+j)%2==0){
+                        auto.setBono(true);
+                    }
+                    auto.setMatricula(i+j+"ABC");
+                    int tipoAutomovil = (int) (Math.random()*3);
+                    switch(tipoAutomovil){
+                        case 0:
+                            auto.setTipo(Automovil.Tipo.TURISMO);
+                            break;
+                        case 1:
+                            auto.setTipo(Automovil.Tipo.FURGONETA);
+                            break;
+                        case 2:
+                            auto.setTipo(Automovil.Tipo.TODOTERRENO);
+                    }
+                    mapa.get(i).getListaVehiculos().add(auto);
+                }
+                else{
+                    int numeroEjesAleat = (int) (Math.random()*6)+2;
+                    Camion camionaso = new Camion(numeroEjesAleat);
+                    int minAleatorio = (int)(Math.random()*200);
+                    camionaso.setMinutos(minAleatorio);
+                    if((i+j)%2==0){
+                        camionaso.setBono(true);
+                    }
+                    camionaso.setMatricula(i+j+"SoyCamion");
+                    mapa.get(i).getListaVehiculos().add(camionaso);
+                }
+            }
+        }// En este bucle creamos el mapa con 6 aparcamientos y cada uno tiene 3 vehiculos
+        ConjuntoAparcamientos cap = new ConjuntoAparcamientos();
+        cap.setListaAparcamientos(mapa);
+        System.out.println(cap);
+        System.out.println(cap.eliminarCamiones());
+        System.out.println(cap);
     }
+
 }
