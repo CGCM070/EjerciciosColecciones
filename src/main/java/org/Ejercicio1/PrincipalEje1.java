@@ -88,6 +88,7 @@ public class PrincipalEje1 {
             System.out.println(e.getMessage());
         }
         Collections.sort(aV);//Ordenamos la lista antes de imprimirla.
+        ap.setCapacidad(100);
         System.out.println(ap);
 
 
@@ -141,6 +142,8 @@ public class PrincipalEje1 {
         System.out.println(cap);
         System.out.println(cap.eliminarCamiones());
         System.out.println(cap);
+
+
     }
 
 }

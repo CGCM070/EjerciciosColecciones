@@ -24,6 +24,7 @@ public class ConjuntoAparcamientos {
 
         if (ap_siguiente.getCapacidad() >= ap_actual.getCapacidad() + ap_siguiente.getCapacidad()) {
             ap_siguiente.getListaVehiculos().addAll(ap_actual.getListaVehiculos());
+            ap_siguiente.setCapacidad(ap_siguiente.getCapacidad()-ap_actual.getCapacidad());
         }
         ap_actual.getListaVehiculos().clear();
 

@@ -61,5 +61,13 @@ public class AparcamientMap {
                 ", capacidad=" + capacidad +
                 '}';
     }
+
+    public int getCapacidad() {
+        return capacidad;
+    }
+
+    public void setCapacidad(int capacidad) {
+        this.capacidad = capacidad;
+    }
 }
 
